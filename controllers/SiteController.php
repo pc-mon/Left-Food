@@ -77,7 +77,7 @@ class SiteController extends Controller {
             $model->save();
         }
         return $this->render('contact' , array(
-                    'requests' => new requests()
+                    'requests' => new requests(),'t'=>Yii::$app->request->post()
         ));
 //        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
 //            Yii::$app->session->setFlash('contactFormSubmitted');

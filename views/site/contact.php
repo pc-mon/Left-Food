@@ -1,6 +1,6 @@
 <?php
 
-
+print_r($t);
 use yii\widgets\ActiveForm ;
 use kartik\select2\Select2;
 
