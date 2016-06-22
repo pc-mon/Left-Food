@@ -1,8 +1,11 @@
 <?php
 
 print_r($t);
-use yii\widgets\ActiveForm ;
-use kartik\select2\Select2;
+
+use yii\widgets\ActiveForm;
+use kartik\select2\Select2; 
+use yii\helpers\ArrayHelper;
+use app\models\Regions;
 
 
 $r = yii\bootstrap\ActiveForm::begin();
@@ -13,7 +16,9 @@ echo $r->field($requests, 'desc')->textarea();
 
 echo $r->field($requests, 'address')->textarea();
 
-echo $r->field($requests, 'region')->widget(Select2::classname(), ['data' => array(1,2,3)]);
+echo $r->field($requests, 'foods')->textarea();
+
+echo $r->field($requests, 'region')->widget(Select2::classname(), ['data' => ArrayHelper::map(Regions::find()->all(), 'id', 'title')]);
 
 echo $r->field($requests, 'email')->textInput();
 
