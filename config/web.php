@@ -5,7 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log'], 
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -38,7 +38,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
     ],
+     
     'params' => $params,
 ];
 
